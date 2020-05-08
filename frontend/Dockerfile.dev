@@ -1,0 +1,7 @@
+FROM node:alpine
+WORKDIR /opt/app	
+COPY ./package.json .
+RUN yarn install
+RUN npm install react-scripts@3.4.1 -g --silent
+COPY . .
+CMD ["yarn", "start"]
